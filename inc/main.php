@@ -28,11 +28,11 @@ class wpCelyanFooterMenu {
 	}
 	
 	public function display_footer_menu() {
-		wp_nav_menu( array( 'theme_location' => 'footer' ) );
+		wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'secondary-menu' ) );
 	}
 	
 	public function display_bboston_footer_menu() {
-		wp_nav_menu( array( 'theme_location' => 'bboston_footer' ) );
+		wp_nav_menu( array( 'theme_location' => 'bboston_footer', 'menu_class' => 'secondary-menu' ) );
 	}
 }
 ?>
