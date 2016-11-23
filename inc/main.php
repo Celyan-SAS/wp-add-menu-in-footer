@@ -17,15 +17,22 @@ class wpCelyanFooterMenu {
 		
 		add_action( 'after_setup_theme', array( $this, 'register_my_menu' ) );
 		
-		add_action( 'wp_footer', array( $this, 'display_my_menu' ), 5 );
+		add_action( 'boston_before_footer', array( $this, 'display_bboston_footer_menu' ) );
+		
+		add_action( 'wp_footer', array( $this, 'display_footer_menu' ) );
 	}
 	
 	public function register_my_menu() {
+		register_nav_menu( 'bboston_footer', __( 'Before Boston Footer Menu', 'wpcfootermenu' ) );
 		register_nav_menu( 'footer', __( 'Footer Menu', 'wpcfootermenu' ) );
 	}
 	
-	public function display_my_menu() {
+	public function display_footer_menu() {
 		wp_nav_menu( array( 'theme_location' => 'footer' ) );
+	}
+	
+	public function display_bboston_footer_menu() {
+		wp_nav_menu( array( 'theme_location' => 'bboston_footer' ) );
 	}
 }
 ?>
