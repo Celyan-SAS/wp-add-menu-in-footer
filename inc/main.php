@@ -17,7 +17,7 @@ class wpCelyanFooterMenu {
 		
 		add_action( 'after_setup_theme', array( $this, 'register_my_menu' ) );
 		
-		add_action( 'wp_footer', array( $this, 'display_my_menu' ) );
+		add_action( 'wp_footer', array( $this, 'display_my_menu', 5 ) );
 	}
 	
 	public function register_my_menu() {
